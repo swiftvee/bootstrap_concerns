@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
-  s.add_dependency "actionview", ">= 8.0.0"
-  s.add_development_dependency "rspec"
-  s.add_development_dependency "standard"
+  s.add_dependency "actionview", "~> 8"
+  s.add_development_dependency "rspec", "~> 3"
+  s.add_development_dependency "standard", "~> 1"
   s.authors = [
     "Evan Brooks",
     "Robert Keresnyei"

@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     bootstrap_concerns (0.1.0)
-      actionview (>= 8.0.0)
+      actionview (~> 8)
 
 GEM
   remote: https://rubygems.org/
@@ -138,8 +138,8 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap_concerns!
-  rspec
-  standard
+  rspec (~> 3)
+  standard (~> 1)
 
 BUNDLED WITH
    2.6.3

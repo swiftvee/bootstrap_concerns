@@ -1,4 +1,4 @@
-require "bootstrap_concerns/options"
+require "bootstrap_concerns/option"
 
 RSpec.describe BootstrapConcerns::Option do
   describe ".options_with_button_class" do
