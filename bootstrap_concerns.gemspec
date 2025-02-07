@@ -3,7 +3,11 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rspec"
   s.add_development_dependency "standard"
   s.authors = ["Evan Brooks", "Robert Keresnyei"]
-  s.files = ["lib/bootstrap_form_builder_concern.rb", "lib/bootstrap_form_builder_concern/bootstrap_options.rb"]
+  s.files = [
+    "lib/bootstrap_concerns/buttons_helper.rb",
+    "lib/bootstrap_form_builder_concern/form_builder.rb",
+    "lib/bootstrap_form_builder_concern/options.rb"
+  ]
   s.homepage = "https://github.com/swiftvee/bootstrap_form_builder_concern"
   s.license = "MIT"
   s.name = "bootstrap_concerns"

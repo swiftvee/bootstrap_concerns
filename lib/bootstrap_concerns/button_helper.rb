@@ -1,5 +1,5 @@
 module BootstrapConcerns
-  module ButtonsHelper
+  module ButtonHelper
     def bs_button_to(name = nil, options = nil, html_options = nil, &)
       bs_link_or_button_to(:button_to, name, options, html_options, &)
     end
@@ -16,7 +16,7 @@ module BootstrapConcerns
           html_options ||= {}
         end
 
-      normalized_html_options.merge!(Options.options_with_button_class(normalized_html_options))
+      normalized_html_options.merge!(Option.options_with_button_class(normalized_html_options))
 
       public_send(
         method_name,

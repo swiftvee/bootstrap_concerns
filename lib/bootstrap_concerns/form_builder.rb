@@ -9,7 +9,7 @@ module BootstrapConcerns
 
     def bs_button(value = nil, options = {}, &)
       normalized_options = value.is_a?(Hash) ? value : options
-      normalized_options.merge!(Options.options_with_button_class(normalized_options))
+      normalized_options.merge!(Option.options_with_button_class(normalized_options))
 
       button(value, options, &)
     end
@@ -103,7 +103,7 @@ module BootstrapConcerns
 
     def bs_submit(value = nil, options = {})
       normalized_options = value.is_a?(Hash) ? value : options
-      normalized_options.merge!(Options.options_with_button_class(normalized_options))
+      normalized_options.merge!(Option.options_with_button_class(normalized_options))
 
       submit(value, options)
     end
@@ -115,7 +115,7 @@ module BootstrapConcerns
     def bs_plain_text_field(method, options = {})
       text_field(
         method,
-        Options.options_with_base_class(options, FORM_CONTROL_PLAIN_TEXT_BASE_CLASS).merge(readonly: true)
+        Option.options_with_base_class(options, FORM_CONTROL_PLAIN_TEXT_BASE_CLASS).merge(readonly: true)
       )
     end
 
@@ -134,22 +134,22 @@ module BootstrapConcerns
     private
 
     def options_with_form_check_input_class(options)
-      Options.options_with_base_class(options, FORM_CHECK_INPUT_BASE_CLASS)
+      Option.options_with_base_class(options, FORM_CHECK_INPUT_BASE_CLASS)
     end
 
     def options_with_form_control_class(options)
-      size = Options.prefixed_option(options, key: :size, prefix: FORM_CONTROL_BASE_CLASS)
-      Options.options_with_base_class(options, FORM_CONTROL_BASE_CLASS, size)
+      size = Option.prefixed_option(options, key: :size, prefix: FORM_CONTROL_BASE_CLASS)
+      Option.options_with_base_class(options, FORM_CONTROL_BASE_CLASS, size)
     end
 
     def options_with_form_select_class(options, html_options)
-      size = Options.prefixed_option(options, key: :size, prefix: FORM_SELECT_BASE_CLASS)
-      Options.options_with_base_class(html_options, FORM_SELECT_BASE_CLASS, size)
+      size = Option.prefixed_option(options, key: :size, prefix: FORM_SELECT_BASE_CLASS)
+      Option.options_with_base_class(html_options, FORM_SELECT_BASE_CLASS, size)
     end
 
     def options_with_form_label_class(options)
       required = REQUIRED_CLASS if options.delete(:required)
-      Options.options_with_base_class(options, FORM_LABEL_BASE_CLASS, required)
+      Option.options_with_base_class(options, FORM_LABEL_BASE_CLASS, required)
     end
   end
 end
