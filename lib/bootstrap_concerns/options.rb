@@ -1,5 +1,5 @@
-module BootstrapFormBuilderConcern
-  class BootstrapOptions
+module BootstrapConcerns
+  class Options
     BUTTON_BASE_CLASS = "btn".freeze
     DEFAULT_BUTTON_COLOR = "primary".freeze
 

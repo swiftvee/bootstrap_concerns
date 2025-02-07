@@ -1,6 +1,6 @@
-require "bootstrap_form_builder_concern/bootstrap_options"
+require "bootstrap_concerns/options"
 
-RSpec.describe BootstrapFormBuilderConcern::BootstrapOptions do
+RSpec.describe BootstrapConcerns::Options do
   describe ".options_with_button_class" do
     subject { described_class.options_with_button_class(options) }
 

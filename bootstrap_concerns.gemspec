@@ -6,8 +6,8 @@ Gem::Specification.new do |s|
   s.files = ["lib/bootstrap_form_builder_concern.rb", "lib/bootstrap_form_builder_concern/bootstrap_options.rb"]
   s.homepage = "https://github.com/swiftvee/bootstrap_form_builder_concern"
   s.license = "MIT"
-  s.name = "bootstrap_form_builder_concern"
+  s.name = "bootstrap_concerns"
   s.required_ruby_version = ">= 3.4.0"
-  s.summary = "A concern for Rails form builders to generate Bootstrap forms."
-  s.version = "1.0.1"
+  s.summary = "Concerns for building Bootstrap components with Ruby on Rails."
+  s.version = "0.1.0"
 end

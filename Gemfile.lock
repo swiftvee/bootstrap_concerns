@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bootstrap_form_builder_concern (1.0.1)
+    bootstrap_concerns (0.1.0)
       actionview (>= 8.0.0)
 
 GEM
@@ -137,7 +137,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  bootstrap_form_builder_concern!
+  bootstrap_concerns!
   rspec
   standard
 

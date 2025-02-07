@@ -1,3 +1,3 @@
-# Bootstrap Form Builder Concern
+# Bootstrap Concerns
 
-A concern for Rails form builders to generate Bootstrap forms.
+Concerns for building Bootstrap components with Ruby on Rails.
