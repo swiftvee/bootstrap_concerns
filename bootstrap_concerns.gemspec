@@ -4,9 +4,9 @@ Gem::Specification.new do |s|
   s.add_development_dependency "standard"
   s.authors = ["Evan Brooks", "Robert Keresnyei"]
   s.files = [
-    "lib/bootstrap_concerns/buttons_helper.rb",
+    "lib/bootstrap_concerns/button_helper.rb",
     "lib/bootstrap_form_builder_concern/form_builder.rb",
-    "lib/bootstrap_form_builder_concern/options.rb"
+    "lib/bootstrap_form_builder_concern/option.rb"
   ]
   s.homepage = "https://github.com/swiftvee/bootstrap_form_builder_concern"
   s.license = "MIT"
