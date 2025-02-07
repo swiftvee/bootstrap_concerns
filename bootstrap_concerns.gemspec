@@ -7,6 +7,7 @@ Gem::Specification.new do |s|
     "Robert Keresnyei"
   ]
   s.files = [
+    "lib/bootstrap_concerns.rb",
     "lib/bootstrap_concerns/button_helper.rb",
     "lib/bootstrap_concerns/form_builder.rb",
     "lib/bootstrap_concerns/option.rb"
@@ -16,5 +17,5 @@ Gem::Specification.new do |s|
   s.name = "bootstrap_concerns"
   s.required_ruby_version = ">= 3.4.0"
   s.summary = "Concerns for building Bootstrap components with Ruby on Rails."
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 end
