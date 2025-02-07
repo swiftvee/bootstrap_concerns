@@ -1,3 +1,5 @@
+require "bootstrap_form_builder_concern/bootstrap_options"
+
 module BootstrapFormBuilderConcern
   FORM_LABEL_BASE_CLASS = "form-label".freeze
   FORM_CHECK_INPUT_BASE_CLASS = "form-check-input".freeze
