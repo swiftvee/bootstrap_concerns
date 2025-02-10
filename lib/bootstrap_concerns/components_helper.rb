@@ -1,5 +1,5 @@
 module BootstrapConcerns
-  module ButtonHelper
+  module ComponentsHelper
     def bs_button_to(name = nil, options = nil, html_options = nil, &)
       bs_link_or_button_to(:button_to, name, options, html_options, &)
     end
@@ -25,6 +25,17 @@ module BootstrapConcerns
         html_options,
         &
       )
+    end
+
+    def flash_alert_color(key)
+      case key
+      when "notice"
+        "success"
+      when "alert"
+        "danger"
+      else
+        key
+      end
     end
   end
 end
