@@ -28,7 +28,7 @@ module BootstrapConcerns
     end
 
     def flash_alert_color(key)
-      case key
+      case key.to_s
       when "notice"
         "success"
       when "alert"
