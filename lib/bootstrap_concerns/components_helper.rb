@@ -86,6 +86,12 @@ module BootstrapConcerns
       icon("input-cursor-text", "Rename")
     end
 
+    def table(&)
+      content_tag :div, class: "table-responsive" do
+        content_tag(:table, class: "table table-striped table-sm", &)
+      end
+    end
+
     def search_icon
       icon("search", "Search")
     end
