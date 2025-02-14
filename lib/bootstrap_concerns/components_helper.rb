@@ -18,6 +18,22 @@ module BootstrapConcerns
       bs_link_or_button_to(:button_to, name, options, html_options, &)
     end
 
+    def bs_errors(record)
+      return if record.errors.empty?
+
+      content_tag(:div, class: "alert alert-danger alert-dismissible fade show mt-3") do
+        concat content_tag(:h5, "Errors")
+        concat(
+          content_tag(:ul, class: "mb-0") do
+            record.errors.full_messages.each do |message|
+              concat content_tag(:li, message)
+            end
+          end
+        )
+        concat content_tag(:button, nil, type: "button", class: "btn-close", data: { bs_dismiss: "alert" })
+      end
+    end
+
     def bs_link_or_button_to(method_name, name, options, html_options, &)
       normalized_html_options =
         if block_given?
