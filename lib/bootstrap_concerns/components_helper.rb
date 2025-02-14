@@ -1,5 +1,7 @@
 module BootstrapConcerns
   module ComponentsHelper
+    SEARCH_COL_MARGIN = "mb-3".freeze
+
     def assign_icon
       icon("box-arrow-in-left", "Assign")
     end
@@ -37,6 +39,18 @@ module BootstrapConcerns
 
     def bs_link_to(name = nil, options = nil, html_options = nil, &)
       bs_link_or_button_to(:link_to, name, options, html_options, &)
+    end
+
+    def bs_search_col(&)
+      content_tag(:div, class: "col-12 col-sm #{SEARCH_COL_MARGIN}", &)
+    end
+
+    def bs_search_submit_col
+      content_tag(:div, class: "col-auto #{SEARCH_COL_MARGIN}") do
+        content_tag(:button, BootstrapConcerns::Option.options_with_button_class) do
+          search_icon
+        end
+      end
     end
 
     def copy_icon

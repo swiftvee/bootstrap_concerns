@@ -17,5 +17,5 @@ Gem::Specification.new do |s|
   s.name = "bootstrap_concerns"
   s.required_ruby_version = ">= 3.4.0"
   s.summary = "Concerns for building Bootstrap components with Ruby on Rails."
-  s.version = "0.1.7"
+  s.version = "0.1.8"
 end
