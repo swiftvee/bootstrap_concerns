@@ -30,7 +30,7 @@ module BootstrapConcerns
             end
           end
         )
-        concat content_tag(:button, nil, type: "button", class: "btn-close", data: { bs_dismiss: "alert" })
+        concat content_tag(:button, nil, type: "button", class: "btn-close", data: {bs_dismiss: "alert"})
       end
     end
 
