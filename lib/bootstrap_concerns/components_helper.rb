@@ -118,7 +118,7 @@ module BootstrapConcerns
 
     def bs_table(&)
       content_tag :div, class: "table-responsive" do
-        content_tag(:table, class: "table table-striped table-sm", &)
+        content_tag(:table, class: "table table-striped table-sm align-middle", &)
       end
     end
 
