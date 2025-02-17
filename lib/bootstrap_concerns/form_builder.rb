@@ -97,6 +97,10 @@ module BootstrapConcerns
       search_field(method, options_with_form_control_class(options))
     end
 
+    def bs_save_submit(options = {})
+      bs_submit("Save", options)
+    end
+
     def bs_select(method, choices = nil, options = {}, html_options = {}, &)
       select(method, choices, options, options_with_form_select_class(options, html_options), &)
     end
