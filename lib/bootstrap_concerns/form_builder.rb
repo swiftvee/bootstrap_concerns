@@ -81,6 +81,25 @@ module BootstrapConcerns
       label(method, text, options, &)
     end
 
+    def bs_file_field(method, options = {})
+      file_field(
+        method,
+        {
+          class: FORM_CONTROL_BASE_CLASS,
+          direct_upload: true,
+          data: {
+            controller: "direct-upload-field",
+            action: <<~ACTION.squish
+              direct-upload:initialize->direct-upload-field#setup
+              direct-upload:progress->direct-upload-field#progress
+              direct-upload:error->direct-upload-field#error
+              direct-upload:end->direct-upload-field#end
+            ACTION
+          }
+        }.merge(options)
+      )
+    end
+
     def bs_number_field(method, options = {})
       number_field(method, options_with_form_control_class(options))
     end
