@@ -1,0 +1,10 @@
+{
+  "name": "@swiftvee/bootstrap-concerns",
+  "version": "0.5.0",
+  "license": "MIT",
+  "peerDependencies": {
+    "bootstrap": "^5.3.0",
+    "bootstrap-icons": "^1.11.0",
+    "@hotwired/stimulus": "^3.2.0"
+  }
+}

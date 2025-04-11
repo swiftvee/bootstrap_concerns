@@ -1,7 +1,5 @@
 module BootstrapConcerns
   module ComponentsHelper
-    SEARCH_COL_MARGIN = "mb-3".freeze
-
     def assign_icon
       icon("box-arrow-in-left", "Assign")
     end
@@ -14,6 +12,19 @@ module BootstrapConcerns
       content_tag(:i, "", class: "bi bi-check-circle-fill")
     end
 
+    def bs_button_tag(content_or_options = nil, options = nil, &)
+      normalized_options =
+        if content_or_options.is_a?(Hash)
+          content_or_options
+        else
+          options ||= {}
+        end
+
+      normalized_options.merge!(Option.options_with_button_class(normalized_options))
+
+      button_tag(content_or_options, options, &)
+    end
+
     def bs_button_to(name = nil, options = nil, html_options = nil, &)
       bs_link_or_button_to(:button_to, name, options, html_options, &)
     end
@@ -21,7 +32,7 @@ module BootstrapConcerns
     def bs_errors(record)
       return if record.errors.empty?
 
-      content_tag(:div, class: "alert alert-danger alert-dismissible fade show mt-3") do
+      content_tag(:div, class: "alert alert-danger alert-dismissible fade show mb-3") do
         concat content_tag(:h5, "Errors")
         concat(
           content_tag(:ul, class: "mb-0") do
@@ -31,6 +42,19 @@ module BootstrapConcerns
           end
         )
         concat content_tag(:button, nil, type: "button", class: "btn-close", data: {bs_dismiss: "alert"})
+      end
+    end
+
+    def bs_form_with(model: false, **options, &)
+      form_with(model: model, **options) do |form|
+        concat(bs_errors(model)) if model
+        concat(
+          content_tag(:div, class: "row") do
+            content_tag(:div, class: "col-md-6") do
+              yield(form)
+            end
+          end
+        )
       end
     end
 
@@ -58,11 +82,11 @@ module BootstrapConcerns
     end
 
     def bs_search_col(&)
-      content_tag(:div, class: "col-12 col-sm #{SEARCH_COL_MARGIN}", &)
+      content_tag(:div, class: "col-12 col-sm #{FormBuilder::MARGIN}", &)
     end
 
     def bs_search_submit_col
-      content_tag(:div, class: "col-auto #{SEARCH_COL_MARGIN}") do
+      content_tag(:div, class: "col-auto #{FormBuilder::MARGIN}") do
         content_tag(:button, BootstrapConcerns::Option.options_with_button_class) do
           search_icon
         end

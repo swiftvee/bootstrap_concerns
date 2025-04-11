@@ -11,7 +11,7 @@ module BootstrapConcerns
       end
 
       def prefixed_option(options, key:, prefix:, default: nil)
-        (options.delete(key) || default)&.then { "#{prefix}-#{_1}" }
+        (options.delete(key) || default)&.then { "#{prefix}-#{it}" }
       end
 
       def options_with_base_class(options, *base_class)
