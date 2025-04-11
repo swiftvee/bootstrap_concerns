@@ -1,5 +1,7 @@
 module BootstrapConcerns
   module ComponentsHelper
+    MARGIN = "mb-3".freeze
+
     def assign_icon
       icon("box-arrow-in-left", "Assign")
     end
@@ -32,7 +34,7 @@ module BootstrapConcerns
     def bs_errors(record)
       return if record.errors.empty?
 
-      content_tag(:div, class: "alert alert-danger alert-dismissible fade show mb-3") do
+      content_tag(:div, class: "alert alert-danger alert-dismissible fade show #{MARGIN}") do
         concat content_tag(:h5, "Errors")
         concat(
           content_tag(:ul, class: "mb-0") do
@@ -82,11 +84,11 @@ module BootstrapConcerns
     end
 
     def bs_search_col(&)
-      content_tag(:div, class: "col-12 col-sm #{FormBuilder::MARGIN}", &)
+      content_tag(:div, class: "col-12 col-sm #{MARGIN}", &)
     end
 
     def bs_search_submit_col
-      content_tag(:div, class: "col-auto #{FormBuilder::MARGIN}") do
+      content_tag(:div, class: "col-auto #{MARGIN}") do
         content_tag(:button, BootstrapConcerns::Option.options_with_button_class) do
           search_icon
         end

@@ -1,6 +1,5 @@
 module BootstrapConcerns
   module FormBuilder
-    MARGIN = "mb-3".freeze
     FORM_LABEL_BASE_CLASS = "form-label".freeze
     FORM_CHECK_INPUT_BASE_CLASS = "form-check-input".freeze
     FORM_CONTROL_BASE_CLASS = "form-control".freeze
@@ -56,7 +55,7 @@ module BootstrapConcerns
     def bs_form_group(method, type, *args)
       options = args.find { it.is_a?(Hash) }.to_h
 
-      @template.content_tag(:div, class: MARGIN) do
+      @template.content_tag(:div, class: ComponentsHelper::MARGIN) do
         @template.concat bs_label(method, options.slice(:required))
         @template.concat public_send("bs_#{type}", method, *args)
       end
