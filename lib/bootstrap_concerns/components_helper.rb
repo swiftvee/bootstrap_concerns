@@ -7,11 +7,11 @@ module BootstrapConcerns
     end
 
     def boolean_false_icon
-      content_tag(:i, "", class: "bi bi-x-circle-fill")
+      icon("x-circle-fill")
     end
 
     def boolean_true_icon
-      content_tag(:i, "", class: "bi bi-check-circle-fill")
+      icon("check-circle-fill")
     end
 
     def bs_button_tag(content_or_options = nil, options = nil, &)
@@ -126,8 +126,9 @@ module BootstrapConcerns
       end
     end
 
-    def icon(name, text)
-      content_tag("i", "", class: "bi bi-#{name}") + content_tag(:span, text, class: "ms-1 d-none d-sm-inline")
+    def icon(name, text = nil)
+      i = content_tag("i", nil, class: "bi bi-#{name}")
+      text ? i + content_tag(:span, text, class: "ms-1 d-none d-sm-inline") : i
     end
 
     def import_icon

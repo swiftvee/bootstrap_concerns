@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bootstrap_concerns (0.5.0)
+    bootstrap_concerns (0.5.1)
       actionview (~> 8)
 
 GEM
