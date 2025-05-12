@@ -1,6 +1,6 @@
 {
   "name": "@swiftvee/bootstrap-concerns",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "license": "MIT",
   "peerDependencies": {
     "bootstrap": "^5.3.0",
