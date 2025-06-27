@@ -53,7 +53,7 @@ module BootstrapConcerns
     end
 
     def bs_form_group(method, type, *args)
-      options = args.find { it.is_a?(Hash) }.to_h
+      options = args.last { it.is_a?(Hash) }.to_h
 
       @template.content_tag(:div, class: ComponentsHelper::MARGIN) do
         @template.concat bs_label(method, options.slice(:required))
