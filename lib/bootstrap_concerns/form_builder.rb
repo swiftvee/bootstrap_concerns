@@ -144,7 +144,7 @@ module BootstrapConcerns
       phone_field(method, options_with_form_control_class(options))
     end
 
-    def bs_plain_text_field(method, options = {})
+    def bs_readonly_plain_text_field(method, options = {})
       text_field(
         method,
         Option.options_with_base_class(options, FORM_CONTROL_PLAIN_TEXT_BASE_CLASS).merge(readonly: true)
