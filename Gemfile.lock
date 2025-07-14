@@ -1,8 +1,9 @@
 PATH
   remote: .
   specs:
-    bootstrap_concerns (0.5.4)
+    bootstrap_concerns (0.5.5)
       actionview (~> 8)
+      activesupport (~> 8)
 
 GEM
   remote: https://rubygems.org/
