@@ -9,7 +9,7 @@ module BootstrapConcerns
 
     def bs_button(value = nil, options = {}, &)
       normalized_options = value.is_a?(Hash) ? value : options
-      normalized_options.merge!(Option.options_with_button_class(normalized_options))
+      normalized_options.deep_merge!(Option.options_with_button_class(normalized_options))
 
       button(value, options, &)
     end
@@ -20,7 +20,7 @@ module BootstrapConcerns
 
     def bs_check_label(method, text = nil, options = {}, &)
       normalized_options = text.is_a?(Hash) ? text : options
-      normalized_options.merge!(options_with_form_label_class(normalized_options))
+      normalized_options.deep_merge!(options_with_form_label_class(normalized_options))
 
       label(method, text, options, &)
     end
@@ -85,7 +85,7 @@ module BootstrapConcerns
 
     def bs_label(method, text = nil, options = {}, &)
       normalized_options = text.is_a?(Hash) ? text : options
-      normalized_options.merge!(options_with_form_label_class(normalized_options))
+      normalized_options.deep_merge!(options_with_form_label_class(normalized_options))
 
       label(method, text, options, &)
     end
@@ -105,7 +105,7 @@ module BootstrapConcerns
               direct-upload:end->direct-upload-field#end
             ACTION
           }
-        }.merge(options)
+        }.deep_merge(options)
       )
     end
 
@@ -135,7 +135,7 @@ module BootstrapConcerns
 
     def bs_submit(value = nil, options = {})
       normalized_options = value.is_a?(Hash) ? value : options
-      normalized_options.merge!(Option.options_with_button_class(normalized_options))
+      normalized_options.deep_merge!(Option.options_with_button_class(normalized_options))
 
       submit(value, options)
     end
@@ -147,7 +147,7 @@ module BootstrapConcerns
     def bs_readonly_plain_text_field(method, options = {})
       text_field(
         method,
-        Option.options_with_base_class(options, FORM_CONTROL_PLAIN_TEXT_BASE_CLASS).merge(readonly: true)
+        Option.options_with_base_class(options, FORM_CONTROL_PLAIN_TEXT_BASE_CLASS).deep_merge(readonly: true)
       )
     end
 

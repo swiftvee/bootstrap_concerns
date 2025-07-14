@@ -1,4 +1,5 @@
 Gem::Specification.new do |s|
+  s.add_dependency "activesupport", "~> 8"
   s.add_dependency "actionview", "~> 8"
   s.add_development_dependency "rspec", "~> 3"
   s.add_development_dependency "standard", "~> 1"
@@ -17,5 +18,5 @@ Gem::Specification.new do |s|
   s.name = "bootstrap_concerns"
   s.required_ruby_version = ">= 3.4.0"
   s.summary = "Concerns for building Bootstrap components with Ruby on Rails."
-  s.version = "0.5.4"
+  s.version = "0.5.5"
 end
