@@ -24,7 +24,10 @@ class DirectUploadFieldController extends Controller {
   progress(event) {
     const { id, progress } = event.detail
 
-    this.#progressBar(id).style.width = `${progress}%`
+    const progressBarStyle = this.#progressBar(id).style
+    if (progressBarStyle.width === "100%") return // The progress events may be dispatched out of order.
+
+    progressBarStyle.width = `${progress}%`
   }
 
   error(event) {
