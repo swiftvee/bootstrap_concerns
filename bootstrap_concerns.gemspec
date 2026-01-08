@@ -5,7 +5,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency "standard", "~> 1"
   s.authors = [
     "Evan Brooks",
-    "Robert Keresnyei"
+    "Robert Keresnyei",
+    "Yuriy Kharchenko"
   ]
   s.files = [
     "lib/bootstrap_concerns.rb",
@@ -18,5 +19,5 @@ Gem::Specification.new do |s|
   s.name = "bootstrap_concerns"
   s.required_ruby_version = ">= 3.4.0"
   s.summary = "Concerns for building Bootstrap components with Ruby on Rails."
-  s.version = "0.5.5"
+  s.version = "0.5.6"
 end
