@@ -4,20 +4,23 @@ import { Controller } from "@hotwired/stimulus"
 class DirectUploadFieldController extends Controller {
   connect() {
     this.progressBars = {}
+
+    this.wrapper = document.createElement("div")
+    this.wrapper.className = "d-flex flex-wrap gap-2 mb-2"
+    this.element.insertAdjacentElement("beforebegin", this.wrapper)
   }
 
   setup(event) {
     const { id, file } = event.detail
 
     const progress = document.createElement("div")
-    progress.className = "progress mb-2"
+    progress.className = "progress"
     const progressBar = document.createElement("div")
-    progressBar.className = "progress-bar progress-bar-striped progress-bar-animated overflow-visible"
+    progressBar.className = "progress-bar progress-bar-striped progress-bar-animated overflow-visible px-3"
     progressBar.style.width = "0%"
     progressBar.textContent = file.name
+    this.wrapper.appendChild(progress)
     progress.appendChild(progressBar)
-
-    this.element.insertAdjacentElement("beforebegin", progress)
     this.progressBars[id] = progressBar
   }
 
