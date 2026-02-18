@@ -4,14 +4,16 @@ import { Controller } from "@hotwired/stimulus"
 class DirectUploadFieldController extends Controller {
   connect() {
     this.progressBars = {}
-
-    this.wrapper = document.createElement("div")
-    this.wrapper.className = "d-flex flex-wrap gap-2 mb-2"
-    this.element.insertAdjacentElement("beforebegin", this.wrapper)
   }
 
   setup(event) {
     const { id, file } = event.detail
+
+    if (!this.wrapper) {
+      this.wrapper = document.createElement("div")
+      this.wrapper.className = "d-flex flex-wrap gap-2 mb-2"
+      this.element.insertAdjacentElement("beforebegin", this.wrapper)
+    }
 
     const progress = document.createElement("div")
     progress.className = "progress"
