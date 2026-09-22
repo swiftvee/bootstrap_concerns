@@ -14,6 +14,14 @@ module BootstrapConcerns
       icon("check-circle-fill")
     end
 
+    # A link to a section of the current page. A bare fragment resolves against the address bar, so the
+    # query string survives the click, and the link opts out of Turbo Drive, which would fetch the
+    # document again where the browser simply scrolls. Everything else is bs_link_to's: a button unless
+    # told `button: false`.
+    def bs_anchor_to(name, anchor, **html_options)
+      bs_link_to(name, "##{anchor}", html_options.deep_merge(data: {turbo: false}))
+    end
+
     def bs_button_tag(content_or_options = nil, options = nil, &)
       normalized_options =
         if content_or_options.is_a?(Hash)
@@ -68,7 +76,8 @@ module BootstrapConcerns
           html_options ||= {}
         end
 
-      normalized_html_options.merge!(Option.options_with_button_class(normalized_html_options))
+      button = normalized_html_options.delete(:button) { true }
+      normalized_html_options.merge!(Option.options_with_button_class(normalized_html_options)) if button
 
       public_send(
         method_name,

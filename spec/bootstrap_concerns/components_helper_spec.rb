@@ -61,6 +61,24 @@ RSpec.describe BootstrapConcerns::ComponentsHelper do
           expect(helper).to have_received(:link_to).with(name, options, {class: "btn btn-primary"})
         end
       end
+
+      context "with button: false" do
+        let(:html_options) { {button: false, class: "nav-link"} }
+
+        it "calls link_to without the button classes" do
+          expect(helper).to have_received(:link_to).with(name, options, {class: "nav-link"})
+        end
+      end
+    end
+  end
+
+  describe "#bs_anchor_to" do
+    before { allow(helper).to receive(:bs_link_to) }
+
+    it "links to the fragment outside Turbo Drive, passing the rest to bs_link_to" do
+      helper.bs_anchor_to("Section", "section", button: false, class: "nav-link")
+
+      expect(helper).to have_received(:bs_link_to).with("Section", "#section", {button: false, class: "nav-link", data: {turbo: false}})
     end
   end
 
