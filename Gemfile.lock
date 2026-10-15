@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bootstrap_concerns (0.6.0)
+    bootstrap_concerns (0.7.0)
       actionview (~> 8)
       activesupport (~> 8)
 
