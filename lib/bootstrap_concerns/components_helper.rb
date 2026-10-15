@@ -152,9 +152,9 @@ module BootstrapConcerns
       icon("input-cursor-text", "Rename")
     end
 
-    def bs_table(&)
-      content_tag :div, class: "table-responsive" do
-        content_tag(:table, class: "table table-striped table-sm align-middle", &)
+    def bs_table(table_class: nil, wrapper_class: nil, &)
+      content_tag :div, class: ["table-responsive", wrapper_class].compact do
+        content_tag(:table, class: ["table table-striped table-sm align-middle", table_class].compact, &)
       end
     end
 

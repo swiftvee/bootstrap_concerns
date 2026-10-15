@@ -82,6 +82,24 @@ RSpec.describe BootstrapConcerns::ComponentsHelper do
     end
   end
 
+  describe "#bs_table" do
+    context "without extra classes" do
+      it "wraps a striped table in a responsive container" do
+        expect(helper.bs_table { "rows" }).to eq(
+          '<div class="table-responsive"><table class="table table-striped table-sm align-middle">rows</table></div>'
+        )
+      end
+    end
+
+    context "with extra classes" do
+      it "appends them to the table and the container" do
+        expect(helper.bs_table(table_class: "small", wrapper_class: "mt-3") { "rows" }).to eq(
+          '<div class="table-responsive mt-3"><table class="table table-striped table-sm align-middle small">rows</table></div>'
+        )
+      end
+    end
+  end
+
   describe "#flash_alert_color" do
     subject(:flash_alert_color) { helper.flash_alert_color(key) }
 
